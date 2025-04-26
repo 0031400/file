@@ -8,19 +8,19 @@ jobs:
     steps:
         - name: install golang
           run: |
-            mkdir /root/golang
-            cd /root/golang
+            mkdir /home/runner/golang
+            cd /home/runner/golang
             wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
             tar xf go1.24.2.linux-amd64.tar.gz
         - name: pull git repo
           run: |
-            cd /root
+            cd /home/runner
             wget https://github.com/0031400/file/archive/refs/heads/master.zip
             unzip main.zip
         - name: build
           run: |
-            cd /root/file-master
-            export PATH=/root/golang/go/bin:$PATH
+            cd /home/runner/file-master
+            export PATH=/home/runner/golang/go/bin:$PATH
             go build -o file-1.0-linux-amd64
         - name: upload
           uses: softprops/action-gh-release@v2
@@ -28,4 +28,4 @@ jobs:
             token: ${{ secrets.token }}
             tag_name: v1.0
             files: |
-              /root/file-master/file-1.0-linux-amd64
+              /home/runner/file-master/file-1.0-linux-amd64
