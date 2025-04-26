@@ -15,3 +15,5 @@ body: the file
 the `/upload` need basic auth
 ### log
 no
+### cache
+no but it has the cache header 100y
