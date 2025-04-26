@@ -8,8 +8,6 @@ jobs:
     steps:
         - name: install golang
           run: |
-            apk update
-            apk upgrade
             mkdir /root/golang
             cd /root/golang
             wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
