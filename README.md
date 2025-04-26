@@ -17,3 +17,5 @@ the `/upload` need basic auth
 no
 ### cache
 no but it has the cache header 100y
+### service
+put the `file.service` to the `/etc/systemd/system`

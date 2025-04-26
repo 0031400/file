@@ -1,0 +1,13 @@
+[Unit]
+Description=file
+After=network.target
+
+[Service]
+WorkingDirectory=/home/lxz/file
+ExecStart=/home/lxz/file/file
+Restart=always
+User=lxz
+Group=lxz
+
+[Install]
+WantedBy=multi-user.target
