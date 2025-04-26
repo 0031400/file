@@ -8,8 +8,8 @@ jobs:
     steps:
         - name: install dependency
           run: |
-            apt update
-            apt install wget unzip 
+            sudo apt update
+            sudo apt install wget unzip 
         - name: pull git repo
           run: |
             cd /home/runner
