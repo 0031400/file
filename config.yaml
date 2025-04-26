@@ -1,0 +1,6 @@
+host: 0.0.0.0
+port: 8080
+upload_dir: upload
+access_prefix: i
+username: lxz07
+password: aa753951
