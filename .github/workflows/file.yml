@@ -6,17 +6,15 @@ jobs:
   ubuntu:
     runs-on: ubuntu-latest   
     steps:
-        - name: install golang
+        - name: install dependency
           run: |
-            mkdir /home/runner/golang
-            cd /home/runner/golang
-            wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
-            tar xf go1.24.2.linux-amd64.tar.gz
+            apt update
+            apt install wget unzip 
         - name: pull git repo
           run: |
             cd /home/runner
             wget https://github.com/0031400/file/archive/refs/heads/master.zip
-            unzip main.zip
+            unzip master.zip
         - name: build
           run: |
             cd /home/runner/file-master
