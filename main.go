@@ -121,7 +121,9 @@ func getHandler(w http.ResponseWriter, r *http.Request, cfg *config) {
 		contentType = "application/octet-stream"
 	}
 	w.Header().Set("Content-Type", contentType)
-	w.Header().Set("Cache-Control", "max-age=315360000")
+	w.Header().Set("Cache-Control", "public, max-age=315360000")
+	w.Header().Set("Content-Disposition", fmt.Sprintf(`inline; filename="%s"`, filename))
+
 	http.ServeFile(w, r, filePath)
 }
 func main() {
