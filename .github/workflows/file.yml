@@ -1,7 +1,6 @@
 name: file
 on:
   workflow_dispatch:
-  push:
 jobs:
   ubuntu:
     runs-on: ubuntu-latest   
